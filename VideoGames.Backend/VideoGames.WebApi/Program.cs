@@ -1,3 +1,5 @@
+using VideoGames.WebApi.Middleware;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,6 +12,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseCustomExceptionHandler();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

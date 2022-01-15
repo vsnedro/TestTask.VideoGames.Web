@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Middleware\" />
     <Folder Include="Models\VideoGame\" />
     <Folder Include="Services\" />
   </ItemGroup>
