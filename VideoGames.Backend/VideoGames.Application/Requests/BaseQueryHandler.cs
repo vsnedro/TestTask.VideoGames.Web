@@ -10,7 +10,7 @@ namespace VideoGames.Application.Requests;
 
 public abstract class BaseQueryHandler
 {
-    protected IAppDbContext _dbContext;
+    protected readonly IAppDbContext _dbContext;
 
     public BaseQueryHandler(IAppDbContext dbContext)
     {
