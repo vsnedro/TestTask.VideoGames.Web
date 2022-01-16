@@ -43,7 +43,7 @@ public class VideoGameController : ApiBaseController
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<VideoGameListVm>> GetAll([FromQuery]GetVideoGameListDto getVideoGameListDto, CancellationToken cancellationToken)
+    public async Task<ActionResult<VideoGameListVm>> GetAll([FromQuery] GetVideoGameListDto getVideoGameListDto, CancellationToken cancellationToken)
     {
         var query = new GetVideoGameListQuery()
         {

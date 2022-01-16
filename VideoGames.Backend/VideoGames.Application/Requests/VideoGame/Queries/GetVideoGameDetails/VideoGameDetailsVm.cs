@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VideoGames.Application.Requests.VideoGame.Queries.GetVideoGameDetails;
+﻿namespace VideoGames.Application.Requests.VideoGame.Queries.GetVideoGameDetails;
 
 public class VideoGameDetailsVm
 {

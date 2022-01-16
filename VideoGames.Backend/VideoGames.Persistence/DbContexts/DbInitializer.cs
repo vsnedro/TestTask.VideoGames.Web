@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VideoGames.Persistence.DbContexts;
+﻿namespace VideoGames.Persistence.DbContexts;
 
 public static class DbInitializer
 {
