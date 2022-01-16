@@ -10,9 +10,9 @@ namespace VideoGames.Application.Requests.VideoGame.Queries.GetVideoGameList;
 
 public class GetVideoGameListQuery : IRequest<VideoGameListVm>
 {
-    public int PageIndex { get; set; } = 1;
+    public int PageIndex { get; set; }
 
-    public int PageSize { get; set; } = 10;
+    public int PageSize { get; set; }
 
     public int? ReleaseYear { get; set; }
 
