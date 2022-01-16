@@ -16,5 +16,5 @@ public class VideoGame
 
     public DeveloperStudio DeveloperStudio { get; set; }
 
-    public IEnumerable<VideoGameGenre> Genres { get; set; } = new List<VideoGameGenre>();
+    public ICollection<VideoGameGenre> Genres { get; set; } = new List<VideoGameGenre>();
 }
