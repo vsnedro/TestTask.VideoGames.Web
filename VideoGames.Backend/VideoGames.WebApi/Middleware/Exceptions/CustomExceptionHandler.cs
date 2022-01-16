@@ -4,6 +4,8 @@ using System.Text.Json;
 
 using Microsoft.AspNetCore.Connections;
 
+using FluentValidation;
+
 using VideoGames.Application.Exceptions;
 
 namespace VideoGames.WebApi.Middleware.Exceptions;
@@ -34,8 +36,14 @@ internal class CustomExceptionHandler
 
         switch (exception)
         {
-            case EntityNotFoundException:
+            case ValidationException ex:
                 responseCode = HttpStatusCode.BadRequest;
+                responseText = JsonSerializer.Serialize(ex.Errors);
+                break;
+
+            case EntityNotFoundException:
+                responseCode = HttpStatusCode.NotFound;
+                responseText = JsonSerializer.Serialize(new { error = exception.Message });
                 break;
 
             case OperationCanceledException:
