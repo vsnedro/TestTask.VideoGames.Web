@@ -16,10 +16,4 @@
     <ProjectReference Include="..\VideoGames.Persistence\VideoGames.Persistence.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\VideoGame\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>
