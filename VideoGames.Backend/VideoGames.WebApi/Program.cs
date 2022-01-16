@@ -1,10 +1,15 @@
+using VideoGames.Application;
+using VideoGames.Persistence;
 using VideoGames.WebApi.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services
+    .AddApplication()
+    .AddPersistence(builder.Configuration)
+    .AddControllers();
 
-builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -24,9 +29,7 @@ else
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
