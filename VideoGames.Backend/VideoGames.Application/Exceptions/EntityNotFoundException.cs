@@ -25,5 +25,5 @@ public class EntityNotFoundException : Exception
     { }
 
     private static string FormatMessage(string name, object key) =>
-        $"Entity \"{name}\" ({key}) not found.";
+        $"Entity [{name}] ({key}) not found.";
 }
