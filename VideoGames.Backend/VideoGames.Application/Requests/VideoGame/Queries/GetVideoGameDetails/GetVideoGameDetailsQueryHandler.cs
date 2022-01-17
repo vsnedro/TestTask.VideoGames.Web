@@ -1,10 +1,10 @@
 ﻿using MediatR;
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 
 using VideoGames.Application.Exceptions;
 using VideoGames.Application.Repositories;
-using Microsoft.Extensions.Caching.Memory;
 
 namespace VideoGames.Application.Requests.VideoGame.Queries.GetVideoGameDetails;
 

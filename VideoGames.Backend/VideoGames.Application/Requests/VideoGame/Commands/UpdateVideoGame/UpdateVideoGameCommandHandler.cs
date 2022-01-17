@@ -1,8 +1,9 @@
 ﻿using MediatR;
 
+using Microsoft.EntityFrameworkCore;
+
 using VideoGames.Domain.Entities;
 using VideoGames.Application.Repositories;
-using Microsoft.EntityFrameworkCore;
 using VideoGames.Application.Exceptions;
 
 namespace VideoGames.Application.Requests.VideoGame.Commands.UpdateVideoGame;

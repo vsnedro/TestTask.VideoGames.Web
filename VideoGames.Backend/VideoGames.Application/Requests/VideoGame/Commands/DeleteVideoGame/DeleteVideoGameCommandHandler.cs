@@ -1,7 +1,8 @@
 ﻿using MediatR;
 
-using VideoGames.Application.Repositories;
 using Microsoft.EntityFrameworkCore;
+
+using VideoGames.Application.Repositories;
 using VideoGames.Application.Exceptions;
 
 namespace VideoGames.Application.Requests.VideoGame.Commands.DeleteVideoGame;
