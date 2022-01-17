@@ -35,7 +35,6 @@ public class UpdateVideoGameCommandHandler : BaseCommandHandler, IRequestHandler
 
         (game.Name, game.ReleaseDate, game.DeveloperStudio, game.Genres) = (request.Name, request.ReleaseDate, developer, genres);
 
-        await _dbContext.VideoGames.AddAsync(game, cancellationToken);
         await _dbContext.SaveChangesAsync(cancellationToken);
 
         return Unit.Value;
