@@ -74,11 +74,11 @@ public class VideoGameController : ApiBaseController
             Name = createVideoGameDto.Name,
             ReleaseDate = createVideoGameDto.ReleaseDate,
             DeveloperStudioId = createVideoGameDto.DeveloperStudioId,
-            GenresId = createVideoGameDto.GenresId.ToList(),
+            GenreIds = createVideoGameDto.GenresId.ToList(),
         };
-        var noteId = await Mediator.Send(command, cancellationToken);
+        var gameId = await Mediator.Send(command, cancellationToken);
 
-        return Ok(noteId);
+        return Ok(gameId);
     }
 
     /// <summary>
@@ -99,7 +99,7 @@ public class VideoGameController : ApiBaseController
             Name = updateVideoGameDto.Name,
             ReleaseDate = updateVideoGameDto.ReleaseDate,
             DeveloperStudioId = updateVideoGameDto.DeveloperStudioId,
-            GenresId = updateVideoGameDto.GenresId.ToList(),
+            GenreIds = updateVideoGameDto.GenresId.ToList(),
         };
         await Mediator.Send(command, cancellationToken);
 

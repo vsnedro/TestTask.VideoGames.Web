@@ -21,11 +21,11 @@ public class CreateVideoGameCommandHandler : BaseCommandHandler, IRequestHandler
         _ = developer ?? throw new EntityNotFoundException(nameof(DeveloperStudio), request.DeveloperStudioId);
 
         var genres = await _dbContext.VideoGameGenres
-            .Where(x => request.GenresId.Contains(x.Id))
+            .Where(x => request.GenreIds.Contains(x.Id))
             .ToListAsync(cancellationToken);
         if (!genres.Any())
         {
-            throw new EntityNotFoundException(nameof(VideoGameGenre), request.GenresId);
+            throw new EntityNotFoundException(nameof(VideoGameGenre), request.GenreIds);
         }
 
         var game = new Domain.Entities.VideoGame()

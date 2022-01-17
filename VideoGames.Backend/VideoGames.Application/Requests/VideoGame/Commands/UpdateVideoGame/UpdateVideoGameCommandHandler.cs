@@ -25,11 +25,11 @@ public class UpdateVideoGameCommandHandler : BaseCommandHandler, IRequestHandler
         _ = developer ?? throw new EntityNotFoundException(nameof(DeveloperStudio), request.DeveloperStudioId);
 
         var genres = await _dbContext.VideoGameGenres
-            .Where(x => request.GenresId.Contains(x.Id))
+            .Where(x => request.GenreIds.Contains(x.Id))
             .ToListAsync(cancellationToken);
         if (!genres.Any())
         {
-            throw new EntityNotFoundException(nameof(VideoGameGenre), request.GenresId);
+            throw new EntityNotFoundException(nameof(VideoGameGenre), request.GenreIds);
         }
 
         (game.Name, game.ReleaseDate, game.DeveloperStudio, game.Genres) = (request.Name, request.ReleaseDate, developer, genres);
