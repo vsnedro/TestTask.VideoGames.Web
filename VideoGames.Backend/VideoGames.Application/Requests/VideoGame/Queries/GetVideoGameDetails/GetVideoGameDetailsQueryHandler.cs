@@ -28,6 +28,7 @@ public class GetVideoGameDetailsQueryHandler : BaseQueryHandler, IRequestHandler
             game = await _dbContext.VideoGames
                 .Include(x => x.DeveloperStudio)
                 .Include(x => x.Genres)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
             _ = game ?? throw new EntityNotFoundException(nameof(VideoGame), request.Id);
 
