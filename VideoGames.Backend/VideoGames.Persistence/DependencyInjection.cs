@@ -24,23 +24,19 @@ public static class DependencyInjection
         return services;
     }
 
-    public static async Task<IServiceProvider> InitPersistence(this IServiceProvider services, CancellationToken cancellationToken = default)
+    public static async Task InitPersistenceAsync(this IServiceProvider services, CancellationToken cancellationToken = default)
     {
-        using (var scope = services.CreateScope())
+        using var scope = services.CreateScope();
+        var provider = scope.ServiceProvider;
+        try
         {
-            var provider = scope.ServiceProvider;
-            try
-            {
-                var dbContext = provider.GetRequiredService<AppDbContext>();
-                await DbInitializer.InitializeAsync(dbContext, cancellationToken);
-            }
-            catch (Exception ex)
-            {
-                var logger = services.GetService<ILogger>();
-                logger?.LogCritical(ex, "An error occurred while initializing the application database.");
-            }
+            var dbContext = provider.GetRequiredService<AppDbContext>();
+            await DbInitializer.InitializeAsync(dbContext, cancellationToken);
         }
-
-        return services;
+        catch (Exception ex)
+        {
+            var logger = services.GetService<ILogger>();
+            logger?.LogCritical(ex, "An error occurred while initializing the application database.");
+        }
     }
 }
