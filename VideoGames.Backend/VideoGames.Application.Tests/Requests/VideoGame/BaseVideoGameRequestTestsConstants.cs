@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace VideoGames.Application.Tests.Requests.VideoGame;
 
-public static class BaseVideoGameRequestTestsConstants
+internal static class BaseVideoGameRequestTestsConstants
 {
     /// <summary>
     /// Video game constants for testing.

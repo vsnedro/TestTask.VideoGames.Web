@@ -1,6 +1,6 @@
 ﻿namespace VideoGames.Application.Tests.Requests;
 
-public static class BaseRequestTestsConstants
+internal static class BaseRequestTestsConstants
 {
     /// <summary>
     /// Developer studio constants for testing.
