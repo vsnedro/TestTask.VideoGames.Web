@@ -13,11 +13,9 @@ public class AppDbContext : DbContext, IAppDbContext
     public DbSet<VideoGame> VideoGames { get; set; }
     public DbSet<VideoGameGenre> VideoGameGenres { get; set; }
 
-    public AppDbContext(DbContextOptions<AppDbContext> options) :
-        base(options)
-    {
-        Database.EnsureCreated();
-    }
+    public AppDbContext(DbContextOptions<AppDbContext> options)
+        : base(options)
+    { }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

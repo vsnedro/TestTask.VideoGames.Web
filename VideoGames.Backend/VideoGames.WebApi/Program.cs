@@ -33,4 +33,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
-app.Run();
+await app.Services.InitPersistence();
+
+await app.RunAsync();
