@@ -31,6 +31,7 @@ public class GetVideoGameListQueryHandler : BaseQueryHandler, IRequestHandler<Ge
 
         var count = await query.CountAsync(cancellationToken);
         var games = await query
+            .OrderBy(x => x.Id)
             .Skip((request.PageIndex - 1) * request.PageSize)
             .Take(request.PageSize)
             .Select(game => new VideoGameLookupDto
